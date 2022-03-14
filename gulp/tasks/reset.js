@@ -1,3 +1,5 @@
+import del from "del"; // Очистка каталогу
+
 export const reset = () => {
-  return app.plugins.del(app.path.clean);
+  return del(app.path.clean);
 };
