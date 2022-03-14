@@ -1,0 +1,17 @@
+body {
+  background-color: #000;
+  color: #fff;
+  background-image: url("../img/bg-img-07.jpg");
+}
+
+@media (max-width: 787px) {
+  body {
+    background-color: #000;
+  }
+}
+
+@media (max-width: 787px) {
+  body {
+    font-size: 20px;
+  }
+}
