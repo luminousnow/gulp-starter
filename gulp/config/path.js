@@ -7,18 +7,15 @@ const sourceFolder = "./src"; // каталог з файлами розробк
 export const path = {
   // Шляхи файлів готового проекту
   build: {
-    files: `${buildFolder}/assets/`,
-
     html: `${buildFolder}/`,
     css: `${buildFolder}/assets/css/`,
     js: `${buildFolder}/assets/js/`,
     img: `${buildFolder}/assets/img/`,
+    fonts: `${buildFolder}/assets/fonts/`,
   },
 
   // Шляхи файлів розробки
   src: {
-    files: `${sourceFolder}/assets/**/*.*`,
-
     html: `${sourceFolder}/*.html`,
     scss: `${sourceFolder}/assets/scss/style.scss`,
     js: `${sourceFolder}/assets/js/script.js`,
@@ -29,8 +26,6 @@ export const path = {
 
   // Шляхи файлів за якими ведеться спостереження
   watch: {
-    files: `${sourceFolder}/assets/**/*.*`,
-
     html: `${sourceFolder}/**/*.html`,
     scss: `${sourceFolder}/assets/scss/**/*.scss`,
     js: `${sourceFolder}/assets/js/**/*.js`,
