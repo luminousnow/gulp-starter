@@ -1,5 +1,6 @@
 import fileInclude from "gulp-file-include"; // Зборщик html
-import webpHtmlNosvg from "gulp-webp-html-nosvg"; // webp формат зображень
+import webpHtmlNosvg from "gulp-webp-html-nosvg"; // Додає розмітку webp до зображень
+import versionNumber from "gulp-version-number"; // Додає версію до css та js
 
 export const html = () => {
   return app.gulp
@@ -8,7 +9,7 @@ export const html = () => {
     .pipe(webpHtmlNosvg())
     .pipe(app.plugins.replace(/@img\//g, "assets/img/"))
     .pipe(
-      app.plugins.versionNumber({
+      versionNumber({
         value: "%DT%",
         append: {
           key: "_v",
