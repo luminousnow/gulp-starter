@@ -5,26 +5,31 @@ const buildFolder = "./dist"; // каталог зібраного проект�
 const sourceFolder = "./src"; // каталог з файлами розробки проекту
 
 export const path = {
-  // шляхи до файлів зібраного проекту
+  // Шляхи файлів готового проекту
   build: {
     files: `${buildFolder}/assets/`,
-    css: `${buildFolder}/assets/css/`,
 
     html: `${buildFolder}/`,
+    css: `${buildFolder}/assets/css/`,
+    js: `${buildFolder}/assets/js/`,
   },
 
-  // шляхи до файлів розробки
+  // Шляхи файлів розробки
   src: {
     files: `${sourceFolder}/assets/**/*.*`,
-    scss: `${sourceFolder}/assets/scss/style.scss`,
+
     html: `${sourceFolder}/*.html`,
+    scss: `${sourceFolder}/assets/scss/style.scss`,
+    js: `${sourceFolder}/assets/js/script.js`,
   },
 
-  // шляхи до файлів над якими ведеться спостереження
+  // Шляхи файлів за якими ведеться спостереження
   watch: {
     files: `${sourceFolder}/assets/**/*.*`,
-    scss: `${sourceFolder}/assets/scss/**/*.*`,
-    html: `${sourceFolder}/**/*.*`,
+
+    html: `${sourceFolder}/**/*.html`,
+    scss: `${sourceFolder}/assets/scss/**/*.scss`,
+    js: `${sourceFolder}/assets/js/**/*.js`,
   },
 
   clean: buildFolder,
