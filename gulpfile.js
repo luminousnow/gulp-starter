@@ -4,6 +4,8 @@ import { plugins } from "./gulp/config/plugins.js";
 
 // Глобальна змінна
 global.app = {
+  isBuild: process.argv.includes("--prod"),
+  isDev: !process.argv.includes("--prod"),
   gulp,
   path,
   plugins,
@@ -42,7 +44,11 @@ const mainTasks = gulp.series(
 );
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(server, watcher));
-const build = gulp;
+const build = gulp.series(reset, mainTasks);
+
+// Експорт
+export { dev, build };
 
 // Завдання Gulp
 gulp.task("default", dev);
+gulp.task("reset", reset);

@@ -3,24 +3,33 @@ import webpHtmlNosvg from "gulp-webp-html-nosvg"; // Додає розмітку
 import versionNumber from "gulp-version-number"; // Додає версію до css та js
 
 export const html = () => {
-  return app.gulp
-    .src(app.path.src.html)
-    .pipe(fileInclude())
-    .pipe(webpHtmlNosvg())
-    .pipe(app.plugins.replace(/@img\//g, "assets/img/"))
-    .pipe(
-      versionNumber({
-        value: "%DT%",
-        append: {
-          key: "_v",
-          cover: 0,
-          to: ["css", "js"],
-        },
-        output: {
-          file: "gulp/version.json",
-        },
-      })
-    )
-    .pipe(app.gulp.dest(app.path.build.html))
-    .pipe(app.plugins.browserSync.stream());
+  return (
+    app.gulp
+      .src(app.path.src.html)
+      .pipe(fileInclude())
+      .pipe(app.plugins.replace(/@img\//g, "assets/img/"))
+
+      // Початок секції плагіни котрі вступають в роботу при isBuild
+      .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
+      .pipe(
+        app.plugins.if(
+          app.isBuild,
+          versionNumber({
+            value: "%DT%",
+            append: {
+              key: "_v",
+              cover: 0,
+              to: ["css", "js"],
+            },
+            output: {
+              file: "gulp/version.json",
+            },
+          })
+        )
+      )
+      // Закінчення секції плагіни котрі вступають в роботу при isBuild
+
+      .pipe(app.gulp.dest(app.path.build.html))
+      .pipe(app.plugins.browserSync.stream())
+  );
 };
