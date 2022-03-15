@@ -23,14 +23,15 @@ function watcher() {
   gulp.watch(path.src.scss, scss);
 }
 
-// Сценарії виконання завдань
+// Сценарії Gulp
 const mainTasks = gulp.parallel(copy, html, scss);
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(server, watcher));
 const build = gulp;
 
-// Gulp завдання
+// Завдання Gulp
 gulp.task("default", dev);
 gulp.task("reset", reset);
 gulp.task("copy", copy);
 gulp.task("html", html);
+gulp.task("scss", scss);

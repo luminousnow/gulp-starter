@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@luminousnow 
-luminousnow
-/
-ubereats
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-ubereats/.gitignore
-@luminousnow
-luminousnow Initial commit
-Latest commit e040584 on Oct 23, 2021
- History
- 1 contributor
-104 lines (76 sloc)  1.57 KB
-   
 # Logs
 logs
 *.log
@@ -37,6 +8,7 @@ lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+version.json
 
 # Runtime data
 pids
