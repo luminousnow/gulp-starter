@@ -16,6 +16,8 @@ import { server } from "./gulp/tasks/server.js";
 import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { img } from "./gulp/tasks/img.js";
+import { svgSprite } from "./gulp/tasks/svg.js";
+
 import {
   otfToTtf,
   ttfToWoff,
@@ -25,24 +27,22 @@ import {
 
 // Спостерігач
 function watcher() {
-  gulp.watch(path.src.html, html);
-  gulp.watch(path.src.scss, scss);
-  gulp.watch(path.src.js, js);
-  gulp.watch(path.src.img, img);
+  gulp.watch(path.watch.html, html);
+  gulp.watch(path.watch.scss, scss);
+  gulp.watch(path.watch.js, js);
+  gulp.watch(path.watch.img, img);
+  gulp.watch(path.watch.svg, svgSprite);
 }
 
 // Сценарії Gulp
 const fonts = gulp.series(otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle);
-const mainTasks = gulp.series(fonts, gulp.parallel(html, scss, js, img));
+const mainTasks = gulp.series(
+  fonts,
+  gulp.parallel(html, scss, js, img, svgSprite)
+);
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(server, watcher));
 const build = gulp;
 
 // Завдання Gulp
 gulp.task("default", dev);
-gulp.task("reset", reset);
-gulp.task("html", html);
-gulp.task("scss", scss);
-gulp.task("js", js);
-gulp.task("img", img);
-gulp.task("fonts", fonts);

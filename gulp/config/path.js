@@ -11,6 +11,7 @@ export const path = {
     css: `${buildFolder}/assets/css/`,
     js: `${buildFolder}/assets/js/`,
     img: `${buildFolder}/assets/img/`,
+    svg: `${buildFolder}/assets/img/svg/`,
     fonts: `${buildFolder}/assets/fonts/`,
   },
 
@@ -20,7 +21,7 @@ export const path = {
     scss: `${sourceFolder}/assets/scss/style.scss`,
     js: `${sourceFolder}/assets/js/script.js`,
     img: `${sourceFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
-    svg: `${sourceFolder}/assets/img/**/*.svg`,
+    svg: `${sourceFolder}/assets/img/svg/**/*.svg`,
     ico: `${sourceFolder}/assets/img/**/*.ico`,
   },
 
@@ -29,7 +30,8 @@ export const path = {
     html: `${sourceFolder}/**/*.html`,
     scss: `${sourceFolder}/assets/scss/**/*.scss`,
     js: `${sourceFolder}/assets/js/**/*.js`,
-    img: `${sourceFolder}/assets/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
+    img: `${sourceFolder}/assets/img/**/*.{jpg,jpeg,png,gif,ico,webp}`,
+    svg: `${sourceFolder}/assets/img/**/*.svg`,
   },
 
   clean: buildFolder,
