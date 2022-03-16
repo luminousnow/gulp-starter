@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.min.css" />
-    <title>Document</title>
-  </head>
+  @@include('./html/head.html', {"title": "Головна"})
   <body>
     @@include('./html/header.html', {})
     <main class="main">
-      <h1 class="title">Let`s burn 🔥🔥🔥</h1>
+      <h1 class="title">Let`s fun!</h1>
+      <img src="@img/felix.gif" alt="felix" />
       <p class="text">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique,
-        rerum amet! Distinctio.
+        Збірка Gulp для Wordpress готова! <br />
+        Заварюємо чай та розпочинаємо!
       </p>
     </main>
     @@include('./html/footer.html', {})
