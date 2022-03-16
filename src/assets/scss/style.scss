@@ -1,6 +1,7 @@
 // @import "fonts";
-@import "./utilities/modern-normalize";
-@import "./utilities/utilits";
+@import "variables";
+@import "utilities/modern-normalize";
+@import "utilities/utilits";
 
 body {
   height: 100vh;
