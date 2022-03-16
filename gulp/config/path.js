@@ -20,7 +20,7 @@ export const path = {
     html: `${sourceFolder}/*.html`,
     scss: `${sourceFolder}/assets/scss/style.scss`,
     js: `${sourceFolder}/assets/js/script.js`,
-    img: `${sourceFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
+    img: `${sourceFolder}/assets/img/**/*.{jpg,jpeg,png,svg,ico,gif,webp}`,
     svg: `${sourceFolder}/assets/img/svg/**/*.svg`,
     ico: `${sourceFolder}/assets/img/**/*.ico`,
   },
@@ -30,7 +30,10 @@ export const path = {
     html: `${sourceFolder}/**/*.html`,
     scss: `${sourceFolder}/assets/scss/**/*.scss`,
     js: `${sourceFolder}/assets/js/**/*.js`,
-    img: `${sourceFolder}/assets/img/**/*.{jpg,jpeg,png,gif,ico,webp}`,
+    img: [
+      `${sourceFolder}/assets/img/**/*.{jpg,jpeg,png,gif,svg,ico,webp}`,
+      `!${sourceFolder}/assets/img/svg/*.svg`,
+    ],
     svg: `${sourceFolder}/assets/img/**/*.svg`,
   },
 

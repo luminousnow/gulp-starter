@@ -1,6 +1,7 @@
 import fileInclude from "gulp-file-include"; // Зборщик html
 import webpHtmlNosvg from "gulp-webp-html-nosvg"; // Додає розмітку webp до зображень
 import versionNumber from "gulp-version-number"; // Додає версію до css та js
+import htmlMin from "gulp-htmlmin";
 
 export const html = () => {
   return (
@@ -11,6 +12,14 @@ export const html = () => {
 
       // Початок секції плагіни котрі вступають в роботу при isBuild
       .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
+      .pipe(
+        app.plugins.if(
+          app.isBuild,
+          htmlMin({
+            collapseWhitespace: true,
+          })
+        )
+      )
       .pipe(
         app.plugins.if(
           app.isBuild,
