@@ -26,11 +26,6 @@ export const img = () => {
       // Закінчення секції плагіни котрі вступають в роботу при isBuild
 
       .pipe(app.gulp.dest(app.path.build.img))
-      .pipe(app.gulp.src(app.path.src.svg))
-      .pipe(app.gulp.dest(app.path.build.img))
-      .pipe(app.gulp.src(app.path.src.ico))
-      .pipe(app.gulp.dest(app.path.build.img))
-
       .pipe(app.plugins.browserSync.stream())
   );
 };
