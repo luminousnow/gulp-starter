@@ -47,8 +47,7 @@ const dev = gulp.series(reset, mainTasks, gulp.parallel(server, watcher));
 const build = gulp.series(reset, mainTasks);
 
 // Експорт
-export { dev, build };
+export { dev, build, reset };
 
 // Завдання Gulp
 gulp.task("default", dev);
-gulp.task("reset", reset);
