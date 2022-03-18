@@ -18,8 +18,10 @@
 
 <h2>Команди</h2>
 
-- npm run dev
-- npm run build
+- `npm run dev`
+- `npm run build`
+- `npm run deploy`
+- `npm run reset`
 
 <h3>dev (режим розробки)</h3>
 
@@ -65,3 +67,12 @@ dist<br />
 ------------ script.min.js<br />
 -------- scss<br />
 ------------ style.min.css<br />
+
+<h3>deploy (деплой на GitHub pages)</h3>
+
+- запускає режим `dev`
+- публікує каталог `dist` на GitHub `gh-pages` branch
+
+<h3>reset</h3>
+
+Примусова очистка каталогу `dist`
