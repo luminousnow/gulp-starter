@@ -12,15 +12,14 @@ global.app = {
 };
 
 // Таски
-import { reset } from "./gulp/tasks/reset.js";
-import { githubDeploy } from "./gulp/tasks/task-githubDeploy.js";
-
-import { html } from "./gulp/tasks/html.js";
-import { server } from "./gulp/tasks/server.js";
-import { scss } from "./gulp/tasks/scss.js";
-import { js } from "./gulp/tasks/js.js";
-import { img } from "./gulp/tasks/img.js";
-import { svgSprite } from "./gulp/tasks/svg.js";
+import { reset } from "./gulp/tasks/reset.js"; // Очистка каталога .dist
+import { githubDeploy } from "./gulp/tasks/task-githubDeploy.js"; // Деплой на GitHub
+import { server } from "./gulp/tasks/server.js"; // Запуск стріму
+import { html } from "./gulp/tasks/html.js"; // Обробка html
+import { scss } from "./gulp/tasks/scss.js"; // Обробка scss
+import { js } from "./gulp/tasks/js.js"; // Обробка js
+import { img } from "./gulp/tasks/img.js"; // Обробка img
+import { svgSprite } from "./gulp/tasks/svg.js"; // Обробка svgSprite
 
 import {
   otfToTtf,
@@ -39,7 +38,7 @@ function watcher() {
 }
 
 // Сценарії Gulp
-const fonts = gulp.series(otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle);
+const fonts = gulp.series(otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle); // Конвертація шрифтів
 const mainTasks = gulp.series(
   fonts,
   gulp.parallel(html, scss, js, img, svgSprite)
