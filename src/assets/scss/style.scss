@@ -17,16 +17,23 @@ body {
   background: url("../img/bg-img-07.jpg") 0 0 no-repeat;
   background-color: #000;
 
-  h1,
-  p {
+  h1 {
+    margin-bottom: 20px;
     text-align: center;
     font-size: 2rem;
   }
 
   main img {
+    padding-bottom: 20px;
+
     display: block;
     margin: auto;
     width: 200px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 2rem;
   }
 }
 
