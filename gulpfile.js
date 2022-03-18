@@ -13,6 +13,8 @@ global.app = {
 
 // Таски
 import { reset } from "./gulp/tasks/reset.js";
+import { githubDeploy } from "./gulp/tasks/task-githubDeploy.js";
+
 import { html } from "./gulp/tasks/html.js";
 import { server } from "./gulp/tasks/server.js";
 import { scss } from "./gulp/tasks/scss.js";
@@ -45,9 +47,13 @@ const mainTasks = gulp.series(
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(server, watcher));
 const build = gulp.series(reset, mainTasks);
+const deploy = gulp.series(build, githubDeploy);
 
 // Експорт
-export { dev, build, reset };
+export { dev, build, deploy, reset };
 
 // Завдання Gulp
 gulp.task("default", dev);
+gulp.task("build", build);
+gulp.task("deploy", deploy);
+gulp.task("reset", reset);
