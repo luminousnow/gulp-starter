@@ -1,7 +1,7 @@
 import webp from "gulp-webp";
 import imagemin from "gulp-imagemin";
 
-export const img = () => {
+export const image = () => {
   return (
     app.gulp
       .src(app.path.src.img)

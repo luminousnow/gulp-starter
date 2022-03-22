@@ -1,6 +1,6 @@
 import webpack from "webpack-stream";
 
-export const js = () => {
+export const javaScript = () => {
   return app.gulp
     .src(app.path.src.js, { sourcemaps: app.isDev })
     .pipe(
