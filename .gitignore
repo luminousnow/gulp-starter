@@ -1,6 +1,7 @@
 # custom ignore
 **/gulp/version.json
-**/.publish
+.publish
+package-lock.json
 
 # Logs
 logs
