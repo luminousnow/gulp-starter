@@ -25,7 +25,7 @@ import {
   ttfToWoff,
   ttfToWoff2,
   fontsStyle,
-} from "./gulp/tasks/task-font.js";
+} from "./gulp/tasks/task-font.js"; // Конвертація шрифтів
 
 // Спостерігач
 function watcher() {
@@ -41,7 +41,6 @@ const mainTasks = gulp.series(
   gulp.series(otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle),
   gulp.parallel(html, scss, javaScript, image, svgSprite)
 );
-
 const dev = gulp.series(reset, mainTasks, gulp.parallel(server, watcher));
 const build = gulp.series(reset, mainTasks);
 const deploy = gulp.series(build, githubDeploy);
