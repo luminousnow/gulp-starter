@@ -1,10 +1,10 @@
 import dartSass from "sass";
 import gulpSass from "gulp-sass";
 import rename from "gulp-rename";
-import cleanCss from "gulp-clean-css";
 import webpCss from "gulp-webpcss";
-import autoprefixer from "gulp-autoprefixer";
-import groupMediaQueries from "gulp-group-css-media-queries";
+import cleanCss from "gulp-clean-css";
+import autoprefixer from "gulp-autoprefixer"; // Автоматичні css префікси для попереніх версій браузерів
+import groupMediaQueries from "gulp-group-css-media-queries"; // Групування медіаправил
 
 const sass = gulpSass(dartSass);
 
@@ -13,6 +13,8 @@ export const scss = () => {
     app.gulp
       .src(app.path.src.scss, { sourcemaps: app.isDev })
       .pipe(sass({ outputStyle: "expanded" }))
+
+      // Заміна шляхів по масці
       .pipe(app.plugins.replace(/@img\//g, "../img/"))
       .pipe(app.plugins.replace(/@svg\//g, "../img/svg/"))
 

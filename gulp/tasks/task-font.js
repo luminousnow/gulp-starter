@@ -2,6 +2,7 @@ import fs from "fs"; // Робота з файловою системою
 import fonter from "gulp-fonter"; // Конвертер шрифту .otf в .ttf
 import ttf2woff2 from "gulp-ttf2woff2"; // Конвертер шрифту .ttf в .woff та .woff2
 
+// .otf --> .ttf
 export const otfToTtf = () => {
   return app.gulp
     .src(`${app.path.sourceFolder}/assets/fonts/*.otf`)
@@ -13,6 +14,7 @@ export const otfToTtf = () => {
     .pipe(app.gulp.dest(app.path.src.fonts));
 };
 
+// .ttf --> .woff
 export const ttfToWoff = () => {
   return app.gulp
     .src(`${app.path.src.fonts}*.ttf`)
@@ -24,6 +26,7 @@ export const ttfToWoff = () => {
     .pipe(app.gulp.dest(app.path.build.fonts));
 };
 
+// .ttf --> .woff2
 export const ttfToWoff2 = () => {
   return app.gulp
     .src(`${app.path.src.fonts}*.ttf`)
@@ -31,6 +34,7 @@ export const ttfToWoff2 = () => {
     .pipe(app.gulp.dest(app.path.build.fonts));
 };
 
+// Створюємо файл стилів шрифтів fonts.scss
 export const fontsStyle = () => {
   // Файл стилів шрифтів розробки
   let fontsFile = `${app.path.sourceFolder}/assets/scss/fonts.scss`;

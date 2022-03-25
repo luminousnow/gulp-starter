@@ -1,5 +1,5 @@
 import svgsprite from "gulp-svg-sprite";
-import cheerio from "gulp-cheerio";
+import cheerio from "gulp-cheerio"; // очищення SVG від стилів, тегів
 
 export const svgSprite = () => {
   return (

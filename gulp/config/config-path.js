@@ -5,7 +5,7 @@ const buildFolder = "./dist"; // каталог зібраного проект�
 const sourceFolder = "./src"; // каталог з файлами розробки проекту
 
 export const path = {
-  // Шляхи файлів готового проекту
+  // Шляхи для dist
   build: {
     html: `${buildFolder}/`,
     css: `${buildFolder}/assets/css/`,
@@ -15,7 +15,7 @@ export const path = {
     fonts: `${buildFolder}/assets/fonts/`,
   },
 
-  // Шляхи файлів розробки
+  // Шляхи для src
   src: {
     html: `${sourceFolder}/*.html`,
     scss: `${sourceFolder}/assets/scss/style.scss`,
