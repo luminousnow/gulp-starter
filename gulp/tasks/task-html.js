@@ -1,7 +1,7 @@
 import fileInclude from "gulp-file-include"; // Зборщик html
 import webpHtmlNosvg from "gulp-webp-html-nosvg"; // Додає розмітку webp до зображень
 import versionNumber from "gulp-version-number"; // Додає версію до css та js
-import htmlMin from "gulp-htmlmin";
+import htmlMin from "gulp-htmlmin"; // Мінімізація коду
 
 export const html = () => {
   return (
@@ -9,6 +9,7 @@ export const html = () => {
       .src(app.path.src.html)
       .pipe(fileInclude())
       .pipe(app.plugins.replace(/@img\//g, "assets/img/"))
+      .pipe(app.plugins.replace(/@svg\//g, "assets/img/svg/"))
 
       // Початок секції плагіни котрі вступають в роботу при isBuild
       .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
