@@ -21,7 +21,10 @@ export const path = {
     scss: `${sourceFolder}/assets/scss/style.scss`,
     js: `${sourceFolder}/assets/js/script.js`,
     img: `${sourceFolder}/assets/img/**/*.{jpg,jpeg,png,gif,ico,webp}`,
-    svg: `${sourceFolder}/assets/img/*.svg`,
+    svg: [
+      `${sourceFolder}/assets/img/svg/*.svg`,
+      `!${sourceFolder}/assets/img/svg/icons.svg`,
+    ],
     fonts: `${sourceFolder}/assets/fonts/`,
   },
 
@@ -31,7 +34,10 @@ export const path = {
     scss: `${sourceFolder}/assets/scss/**/*.scss`,
     js: `${sourceFolder}/assets/js/**/*.js`,
     img: `${sourceFolder}/assets/img/**/*.{jpg,jpeg,png,gif,ico,webp}`,
-    svg: `${sourceFolder}/assets/img/*.svg`,
+    svg: [
+      `${sourceFolder}/assets/img/svg/*.svg`,
+      `!${sourceFolder}/assets/img/svg/icons.svg`,
+    ],
   },
 
   clean: buildFolder,
