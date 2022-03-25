@@ -14,6 +14,7 @@ export const scss = () => {
       .src(app.path.src.scss, { sourcemaps: app.isDev })
       .pipe(sass({ outputStyle: "expanded" }))
       .pipe(app.plugins.replace(/@img\//g, "../img/"))
+      .pipe(app.plugins.replace(/@svg\//g, "../img/svg/"))
 
       // Початок секції плагіни котрі вступають в роботу при isBuild
       .pipe(app.plugins.if(app.isBuild, groupMediaQueries()))
