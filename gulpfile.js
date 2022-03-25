@@ -13,7 +13,6 @@ global.app = {
 
 // Таски
 import { reset } from "./gulp/tasks/task-reset.js"; // Очистка каталога .dist
-import { githubDeploy } from "./gulp/tasks/task-deploy.js"; // Деплой на GitHub
 import { server } from "./gulp/tasks/task-server.js"; // Запуск live Server
 import { html } from "./gulp/tasks/task-html.js"; // Обробка html
 import { scss } from "./gulp/tasks/task-scss.js"; // Обробка scss
@@ -43,7 +42,6 @@ const mainTasks = gulp.series(
 );
 const dev = gulp.series(reset, mainTasks, gulp.parallel(server, watcher));
 const build = gulp.series(reset, mainTasks);
-const deploy = gulp.series(build, githubDeploy);
 
 // Експорт для NPM
-export { dev, build, deploy, reset };
+export { dev, build, reset };
