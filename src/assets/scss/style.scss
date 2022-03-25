@@ -14,7 +14,7 @@ body {
   font-size: 14px;
   color: #fff;
 
-  background: url("../img/bg-img-07.jpg") 0 0 no-repeat;
+  background: url("@img/bg-img-07.jpg") 0 0 no-repeat;
   background-color: #000;
 
   h1 {
@@ -43,7 +43,7 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   padding: 20px;
 
